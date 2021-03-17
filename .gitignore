@@ -1,0 +1,10 @@
+# Donot track any of these
+# Abhinav Kumar
+# Reference https://gist.github.com/octocat/9257657
+
+# Folders
+aflw_ours_organized/
+merl_rav_labels/
+
+# Compiled source
+*.pyc
