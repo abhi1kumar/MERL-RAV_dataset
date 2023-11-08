@@ -5,14 +5,16 @@
 The MERL-RAV ([MERL](https://www.merl.com/) Reannotation of AFLW with Visibility) Dataset contains over 19,000 face images in a full range of head poses. Each face is manually labeled with the ground-truth locations of 68 landmarks, with the additional information of whether each landmark is unoccluded, self-occluded (due to extreme head poses), or externally occluded. The images were annotated by professional labelers, supervised by researchers at Mitsubishi Electric Research Laboratories (MERL). 
 
 Please cite the following [CVPR paper](https://openaccess.thecvf.com/content_CVPR_2020/papers/Kumar_LUVLi_Face_Alignment_Estimating_Landmarks_Location_Uncertainty_and_Visibility_Likelihood_CVPR_2020_paper.pdf) if you use this dataset in your research:
-```
-@inproceedings{kumar_2020_CVPR_luvli,
+
+```Bibtex
+@inproceedings{kumar2020luvli,
   title={LUVLi Face Alignment: Estimating Landmarks' Location, Uncertainty, and Visibility Likelihood},
   author={Kumar, Abhinav and Marks, Tim K. and Mou, Wenxuan and Wang, Ye and Jones, Michael and Cherian, Anoop and Koike-Akino, Toshiaki and Liu, Xiaoming and Feng, Chen},
   booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2020}
 }
 ```
+
 Please also consider citing the original [AFLW dataset](https://www.tugraz.at/institute/icg/research/team-bischof/lrs/downloads/aflw/).
 
 ### Instructions
@@ -25,36 +27,33 @@ Then, download the AFLW dataset (underneath the same project directory) by follo
 
 The project directory should look like this:
 ```bash
- |--merl_rav_labels
- |        |-- frontal
- |        |      |--testset
- |        |      |--trainset
- |        |
- |        |-- left 
- |        |      |--testset
- |        |      |--trainset
- |        |
- |        |-- lefthalf
- |        |      |--testset
- |        |      |--trainset
- |        |
- |        |-- right
- |        |      |--testset
- |        |      |--trainset
- |        |
- |        |-- righthalf
- |               |--testset
- |               |--trainset
- |
- |
- |--aflw
- |    |--flickr
- |         |--0
- |         |--2
- |         |--3
- |
- |--common_functions.py
- |--organize_merl_rav_using_aflw_and_our_labels.py
+├── merl_rav_labels
+│      ├── frontal
+│      │      ├── testset
+│      │      └── trainset
+│      │
+│      ├── left 
+│      │      ├── testset
+│      │      └── trainset
+│      │
+│      ├── lefthalf
+│      │      ├── testset
+│      │      └── trainset
+│      │
+│      ├── right
+│      │      ├── testset
+│      │      └── trainset
+│      │
+│      └── righthalf
+│             ├── testset
+│             └── trainset
+├── aflw
+│      └── flickr
+│             ├── 0
+│             ├── 2
+│             └── 3
+├── common_functions.py
+├── organize_merl_rav_using_aflw_and_our_labels.py
 ```
 If your ```aflw``` folder is located elsewhere, then just set the path in the ```input_folder``` variable of the file ```organize_merl_rav_using_aflw_and_our_labels.py```
 
@@ -66,31 +65,31 @@ python organize_merl_rav_using_aflw_and_our_labels.py
 The script goes through the sub-folders of the ```merl_rav_labels``` folder. For each label file (e.g., ```image12345.pts```), it locates and copies the corresponding image file (```image12345.jpg```) from the ```aflw``` folder. It copies both the label file and image file into a folder named ```merl_rav_organized```, in the same project directory. After the script has completed, this folder will have the following sub-folders:
 
 ```bash
- |--merl_rav_organized
- |        |-- frontal
- |        |      |--testset
- |        |      |--trainset
- |        |
- |        |-- left 
- |        |      |--testset
- |        |      |--trainset
- |        |
- |        |-- lefthalf
- |        |      |--testset
- |        |      |--trainset
- |        |
- |        |-- right
- |        |      |--testset
- |        |      |--trainset
- |        |
- |        |-- righthalf
- |               |--testset
- |               |--trainset
- |
- |--merl_rav_labels
- |--aflw
- |--common_functions.py
- |--organize_merl_rav_using_aflw_and_our_labels.py
+├── merl_rav_organized
+│      ├── frontal
+│      │      ├── testset
+│      │      └── trainset
+│      │
+│      ├── left 
+│      │      ├── testset
+│      │      └── trainset
+│      │
+│      ├── lefthalf
+│      │      ├── testset
+│      │      └── trainset
+│      │
+│      ├── right
+│      │      ├── testset
+│      │      └── trainset
+│      │
+│      └── righthalf
+│             ├── testset
+│             └── trainset
+│
+├── merl_rav_labels
+├── aflw
+├── common_functions.py
+├── organize_merl_rav_using_aflw_and_our_labels.py
 ```
 Each of the ```testset``` and ```trainset``` sub-folders in the ```merl_rav_organized``` folder contains corresponding pairs of label files and image files. The image file and the corresponding ground-truth label file have the same file name, but a different extension: Labels files end with ```.pts``` , while image files end with ```.jpg```. For example, for the image with filename ```image03891.jpg```, the landmark labels are in the text file named ```image03891.pts```.
 
