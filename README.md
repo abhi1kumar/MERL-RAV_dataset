@@ -23,7 +23,7 @@ Download this repository, and unzip it into a project directory.
 cd $PROJECT_DIR
 ```
 
-Then, download the AFLW dataset (underneath the same project directory) by following the instructions [here](https://www.tugraz.at/institute/icg/research/team-bischof/lrs/downloads/aflw/), and move the downloaded dataset into the same project directory as this repository.
+Then, download the [AFLW dataset](https://www.tugraz.at/institute/icg/research/team-bischof/learning-recognition-surveillance/downloads/aflw#download) (underneath the same project directory) by following the instructions and filling the [request form](https://cloud.tugraz.at/index.php/apps/forms/s/R7nejN42iY58E754eqHMfDKS). Move the downloaded dataset into the same project directory as this repository.
 
 The project directory should look like this:
 ```bash
